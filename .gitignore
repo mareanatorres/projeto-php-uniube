@@ -1,42 +1,102 @@
-# OS
+# ==========================================
+# .gitignore - Projeto PHP MVC
+# ==========================================
+
+# ==========================================
+# Sistema Operacional
+# ==========================================
 .DS_Store
 Thumbs.db
 ehthumbs.db
+desktop.ini
 
-# PHP / Composer
+# ==========================================
+# PHP / Composer / Laravel
+# ==========================================
 /vendor/
 /.phpunit.result.cache
 *.log
 *.cache
+composer.lock
 
-# Environment files
+# ==========================================
+# Arquivos de Ambiente
+# ==========================================
 .env
-.env.*
+.env.local
+.env.*.local
+!.env.example
 
-# XAMPP / local env
+# ==========================================
+# IDE / Editor
+# ==========================================
 /.idea/
 /.vscode/
 /.history/
+*.sublime-project
+*.sublime-workspace
+.VS
+.code-workspace
+*.swp
+*~
+*.bak
+*.tmp
 
-# Node
+# ==========================================
+# Node.js
+# ==========================================
 /node_modules/
+package-lock.json
+yarn.lock
 
-# Build / output
+# ==========================================
+# Build / Output / Compilação
+# ==========================================
 /dist/
 /build/
+/out/
+*.min.js
+*.min.css
 
-# Database dumps
+# ==========================================
+# Banco de Dados
+# ==========================================
 *.sql
 *.sql.gz
+*.db
+*.sqlite
+.mysql_history
 
-# Editor swap files
-*~
-*.swp
-
-# Misc
+# ==========================================
+# Testes
+# ==========================================
 coverage/
-.sass-cache/
+.phpunit.xml
+.phpunit.result.cache
 
-# Ignore sensitive config file (if you prefer to keep credentials out of git)
-# Uncomment to stop tracking the database config file after you move credentials to env
-# app/Config/Database.php
+# ==========================================
+# Cache / Temporário
+# ==========================================
+.sass-cache/
+.cache/
+/tmp/
+/temp/
+
+# ==========================================
+# Arquivos de Sistema
+# ==========================================
+.AppleDouble
+.LSOverride
+._*
+.classpath
+.project
+.settings/
+*.jar
+
+# ==========================================
+# Screenshots / Documentação
+# ==========================================
+# Descomente se não quiser rastrear capturas de tela
+# /screenshots/
+# *.png
+# *.jpg
