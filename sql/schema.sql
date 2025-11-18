@@ -14,6 +14,8 @@ CREATE TABLE tasks (
   user_id INT NOT NULL,
   title VARCHAR(255) NOT NULL,
   description TEXT,
+  event_date DATETIME DEFAULT NULL,
+  location VARCHAR(255) DEFAULT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );

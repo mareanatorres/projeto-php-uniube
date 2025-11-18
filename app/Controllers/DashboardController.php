@@ -4,10 +4,8 @@ class DashboardController extends Controller {
         $this->requireAuth();
         $userId = (int)$_SESSION['user_id'];
 
-        $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare('SELECT * FROM tasks WHERE user_id = ? ORDER BY created_at DESC');
-        $stmt->execute([$userId]);
-        $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $taskDao = new TaskDAO();
+        $tasks = $taskDao->forUser($userId);
 
         $this->view('dashboard', ['tasks' => $tasks]);
     }

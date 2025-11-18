@@ -2,9 +2,8 @@
 class Controller {
     protected function view(string $path, array $data = []) {
         extract($data);
-        require __DIR__ . '/../Views/layout/header.php';
+        require __DIR__ . '/../Views/header.php';
         require __DIR__ . '/../Views/' . $path . '.php';
-        require __DIR__ . '/../Views/layout/footer.php';
     }
 
     protected function redirect(string $url) {

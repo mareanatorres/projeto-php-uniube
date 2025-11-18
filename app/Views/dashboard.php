@@ -1,12 +1,36 @@
+<?php require_once __DIR__ . '/header.php'; ?>
+
 <h2>Dashboard</h2>
-<p><a href="/public/index.php?c=cliente&a=index">Ir para Clientes (CRUD)</a></p>
-<?php if(empty($tasks)): ?>
-  <p>Nenhuma tarefa.</p>
+
+<p><a href="?c=event&a=index">Ver Agenda de Eventos</a> | <a href="?c=event&a=create">Adicionar Evento</a></p>
+
+<?php if (empty($tasks)): ?>
+  <p>Você ainda não possui tarefas ou eventos.</p>
 <?php else: ?>
-  <?php foreach($tasks as $t): ?>
-    <div style="border:1px solid #ddd;padding:8px;margin-bottom:8px">
-      <strong><?=htmlspecialchars($t['title'])?></strong>
-      <p><?=nl2br(htmlspecialchars($t['description']))?></p>
-    </div>
-  <?php endforeach; ?>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Data</th>
+      <th>Local</th>
+      <th>Criado em</th>
+      <th>Ações</th>
+    </tr>
+    <?php foreach ($tasks as $t): ?>
+      <tr>
+        <td><?= htmlspecialchars($t['title']) ?></td>
+        <td><?= nl2br(htmlspecialchars($t['description'] ?? '')) ?></td>
+        <td><?= htmlspecialchars($t['event_date'] ?? '') ?></td>
+        <td><?= htmlspecialchars($t['location'] ?? '') ?></td>
+        <td><?= htmlspecialchars($t['created_at'] ?? '') ?></td>
+        <td>
+          <a href="?c=event&a=edit&id=<?= $t['id'] ?>">Editar</a> |
+          <a href="?c=event&a=delete&id=<?= $t['id'] ?>" onclick="return confirm('Remover?')">Remover</a>
+        </td>
+      </tr>
+    <?php endforeach; ?>
+  </table>
 <?php endif; ?>
+
+</main>
+</body>

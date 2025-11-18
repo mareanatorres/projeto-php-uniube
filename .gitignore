@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# PHP / Composer
+/vendor/
+/.phpunit.result.cache
+*.log
+*.cache
+
+# Environment files
+.env
+.env.*
+
+# XAMPP / local env
+/.idea/
+/.vscode/
+/.history/
+
+# Node
+/node_modules/
+
+# Build / output
+/dist/
+/build/
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# Editor swap files
+*~
+*.swp
+
+# Misc
+coverage/
+.sass-cache/
+
+# Ignore sensitive config file (if you prefer to keep credentials out of git)
+# Uncomment to stop tracking the database config file after you move credentials to env
+# app/Config/Database.php
