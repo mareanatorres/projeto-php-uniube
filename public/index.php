@@ -17,11 +17,9 @@ spl_autoload_register(function($class){
     }
 });
 
-// Support both query string (?c=controller&a=action) and path-based routing
 $controller = $_GET['c'] ?? $_GET['path'] ?? 'dashboard';
 $action = $_GET['a'] ?? 'index';
 
-// If controller contains /, it's from rewritten URL path - extract controller
 if (strpos($controller, '/') !== false) {
     $parts = explode('/', trim($controller, '/'));
     $controller = $parts[0] ?? 'dashboard';

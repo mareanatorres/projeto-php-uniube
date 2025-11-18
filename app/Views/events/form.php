@@ -1,32 +1,44 @@
 <?php require_once __DIR__ . '/../header.php'; ?>
 
-<?php $isEdit = !empty($event); ?>
-<h2><?= $isEdit ? 'Editar Evento' : 'Adicionar Evento' ?></h2>
+  <?php $isEdit = !empty($event); ?>
+  
+  <div class="form-container">
+    <div class="form-title"><?= $isEdit ? 'Editar Evento' : 'Adicionar Novo Evento' ?></div>
 
-<form method="post" action="?c=event&a=<?= $isEdit ? 'update' : 'store' ?>">
-  <?php if ($isEdit): ?>
-    <input type="hidden" name="id" value="<?=htmlspecialchars($event['id'])?>">
-  <?php endif; ?>
+    <form method="post" action="?c=event&a=<?= $isEdit ? 'update' : 'store' ?>">
+      <?php if ($isEdit): ?>
+        <input type="hidden" name="id" value="<?=htmlspecialchars($event['id'])?>">
+      <?php endif; ?>
 
-  <label>Título:<br>
-    <input type="text" name="title" value="<?=htmlspecialchars($event['title'] ?? '')?>" required>
-  </label><br><br>
+      <div class="form-group">
+        <label for="title">Título do Evento</label>
+        <input type="text" id="title" name="title" value="<?=htmlspecialchars($event['title'] ?? '')?>" required placeholder="Ex: Conferência de Tecnologia 2025">
+      </div>
 
-  <label>Descrição:<br>
-    <textarea name="description"><?=htmlspecialchars($event['description'] ?? '')?></textarea>
-  </label><br><br>
+      <div class="form-group form-row full">
+        <label for="description">Descrição Detalhada</label>
+        <textarea id="description" name="description" placeholder="Descreva os detalhes do evento..." required><?=htmlspecialchars($event['description'] ?? '')?></textarea>
+      </div>
 
-  <label>Data e hora do evento:<br>
-    <input type="datetime-local" name="event_date" value="<?php if(!empty($event['event_date'])) echo date('Y-m-d\TH:i', strtotime($event['event_date'])); ?>">
-  </label><br><br>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="event_date">Data e Hora</label>
+          <input type="datetime-local" id="event_date" name="event_date" value="<?php if(!empty($event['event_date'])) echo date('Y-m-d\TH:i', strtotime($event['event_date'])); ?>" required>
+        </div>
 
-  <label>Local:<br>
-    <input type="text" name="location" value="<?=htmlspecialchars($event['location'] ?? '')?>">
-  </label><br><br>
+        <div class="form-group">
+          <label for="location">Local do Evento</label>
+          <input type="text" id="location" name="location" value="<?=htmlspecialchars($event['location'] ?? '')?>" required placeholder="Ex: São Paulo - SP">
+        </div>
+      </div>
 
-  <button type="submit"><?= $isEdit ? 'Salvar alterações' : 'Criar evento' ?></button>
-  <a href="?c=event&a=index">Cancelar</a>
-</form>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary"><?= $isEdit ? 'Salvar Alterações' : 'Criar Evento' ?></button>
+        <a href="?c=event&a=index" class="btn btn-secondary" style="text-decoration: none;">Cancelar</a>
+      </div>
+    </form>
+  </div>
 
 </main>
 </body>
+</html>

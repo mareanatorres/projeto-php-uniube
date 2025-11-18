@@ -1,6 +1,4 @@
 <?php
-// Script de apoio: gera um hash bcrypt para a senha de teste e insere o usuário na tabela `users`.
-// Uso: php seed_test_user.php
 
 require_once __DIR__ . '/../app/Config/Database.php';
 
@@ -11,7 +9,6 @@ $plainPassword = 'Test@1234';
 try {
     $db = Database::getInstance()->getConnection();
 
-    // checar se já existe
     $stmt = $db->prepare('SELECT id FROM users WHERE email = ? LIMIT 1');
     $stmt->execute([$email]);
     $exists = $stmt->fetch(PDO::FETCH_ASSOC);

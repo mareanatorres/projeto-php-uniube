@@ -20,7 +20,6 @@ spl_autoload_register(function($class){
 $controller = $_GET['c'] ?? 'dashboard';
 $action = $_GET['a'] ?? 'index';
 
-// Support both query string (?c=controller&a=action) and path-based routing
 if (strpos($controller, '/') !== false) {
     $parts = explode('/', trim($controller, '/'));
     $controller = $parts[0] ?? 'dashboard';

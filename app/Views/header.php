@@ -1,21 +1,26 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Agenda de Eventos de TI</title>
-<style>body{font-family:Arial;max-width:900px;margin:20px auto}nav a{margin-right:10px}</style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos de TI no Brasil 2025</title>
+    <link rel="stylesheet" href="/projeto-php/public/css/style.css">">
 </head>
 <body>
 <header>
-  <h1>Agenda de Eventos de TI no Brasil 2025</h1>
-  <nav>
-    <?php if(!empty($_SESSION['user_id'])): ?>
-      Olá, <?=htmlspecialchars($_SESSION['user_name'])?> |
-      <a href="?c=dashboard&a=index">Dashboard</a>
-      <a href="?c=event&a=index">Agenda de Eventos</a>
-      <a href="?c=auth&a=logout">Sair</a>
-    <?php else: ?>
-      <a href="?c=auth&a=login">Login</a>
-      <a href="?c=auth&a=register">Registrar</a>
-    <?php endif; ?>
-  </nav>
+    <div class="header-container">
+        <div class="logo">Agenda de Eventos de TI no Brasil 2025</div>
+        <nav>
+            <?php if(!empty($_SESSION['user_id'])): ?>
+                <span style="color: #e0e7ff; margin-right: auto;">Olá, <?=htmlspecialchars($_SESSION['user_name'])?></span>
+                <a href="?c=dashboard&a=index">Dashboard</a>
+                <a href="?c=event&a=index">Agenda de Eventos</a>
+                <a href="?c=auth&a=logout" class="logout-btn">Sair</a>
+            <?php else: ?>
+                <a href="?c=auth&a=login">Login</a>
+                <a href="?c=auth&a=register">Registrar</a>
+            <?php endif; ?>
+        </nav>
+    </div>
 </header>
-<main>
+<main class="container">

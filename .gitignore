@@ -1,35 +1,19 @@
-# ==========================================
-# .gitignore - Projeto PHP MVC
-# ==========================================
-
-# ==========================================
-# Sistema Operacional
-# ==========================================
 .DS_Store
 Thumbs.db
 ehthumbs.db
 desktop.ini
 
-# ==========================================
-# PHP / Composer / Laravel
-# ==========================================
 /vendor/
 /.phpunit.result.cache
 *.log
 *.cache
 composer.lock
 
-# ==========================================
-# Arquivos de Ambiente
-# ==========================================
 .env
 .env.local
 .env.*.local
 !.env.example
 
-# ==========================================
-# IDE / Editor
-# ==========================================
 /.idea/
 /.vscode/
 /.history/
@@ -42,49 +26,31 @@ composer.lock
 *.bak
 *.tmp
 
-# ==========================================
-# Node.js
-# ==========================================
 /node_modules/
 package-lock.json
 yarn.lock
 
-# ==========================================
-# Build / Output / Compilação
-# ==========================================
 /dist/
 /build/
 /out/
 *.min.js
 *.min.css
 
-# ==========================================
-# Banco de Dados
-# ==========================================
 *.sql
 *.sql.gz
 *.db
 *.sqlite
 .mysql_history
 
-# ==========================================
-# Testes
-# ==========================================
 coverage/
 .phpunit.xml
 .phpunit.result.cache
 
-# ==========================================
-# Cache / Temporário
-# ==========================================
 .sass-cache/
 .cache/
 /tmp/
 /temp/
 
-# ==========================================
-# Arquivos de Sistema
-# ==========================================
 .AppleDouble
 .LSOverride
 ._*
@@ -92,11 +58,3 @@ coverage/
 .project
 .settings/
 *.jar
-
-# ==========================================
-# Screenshots / Documentação
-# ==========================================
-# Descomente se não quiser rastrear capturas de tela
-# /screenshots/
-# *.png
-# *.jpg
