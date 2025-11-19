@@ -66,3 +66,10 @@ coverage/
 # Ignore local npm/yarn debug files
 .npm/
 .yarn/
+ 
+# Temporary files used while fixing CSS across pages
+# Literal filename (may contain spaces)
+index.php de consertar o css nas paginas
+
+# Generic catch for temporary PHP files containing 'consertar' and 'css'
+*consertar*css*.php
