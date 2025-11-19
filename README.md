@@ -1,6 +1,6 @@
-# Agenda de Eventos de TI - Projeto MVC (PHP + MySQL)
+# Agenda de Eventos de TI no Brasil 2025 — Projeto MVC (PHP + MySQL)
 
-Este projeto é um exemplo de aplicação em PHP usando arquitetura MVC e alguns padrões de projeto (Singleton para a conexão com banco e DAO/Repository para acesso a dados). Tema: Agenda de eventos de TI no Brasil 2025.
+Olá! Esse projeto foi desenvolvido com o intuito dea aplicar padrões de arquitetura (MVC, Singleton, DAO) e alguns padrões de projeto. O tema escolhido foi Agenda de eventos de TI no Brasil 2025.
 
 Pré-requisitos
 
@@ -68,21 +68,3 @@ Testes manuais recomendados
 - Criar um evento (preencher data e local)
 - Editar evento
 - Remover evento
-
-Subir para o GitHub
-
-1. Inicialize o repositório (se ainda não estiver):
-
-```powershell
-git init
-git add .
-git commit -m "Initial commit - Agenda de eventos TI MVC"
-```
-
-2. Crie um repositório no GitHub e siga as instruções fornecidas pelo site para adicionar o remoto e dar push.
-
-Prints exigidos para avaliação
-
-- Tela de login/cadastro (`app/Views/auth/*.php`)
-- Dashboard (`app/Views/dashboard.php`)
-- Tela de adição de evento (`app/Views/events/form.php`)

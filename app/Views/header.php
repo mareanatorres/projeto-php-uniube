@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de Eventos de TI no Brasil 2025</title>
-    <link rel="stylesheet" href="/projeto-php/public/css/style.css">">
+    <style>
+<?php include __DIR__ . '/../../public/css/style.css'; ?>
+    </style>">
 </head>
 <body>
 <header>
